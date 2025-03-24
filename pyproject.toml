@@ -1,0 +1,28 @@
+[project]
+name = "personalized-aws-features"
+version = "0.1.0"
+description = "AWS service feature notifier based on your usage patterns."
+authors = [
+    {name = "moebaca",email = "moebaca@hotmail.com"}
+]
+license = {text = "MIT"}
+readme = "README.md"
+requires-python = ">=3.13,<4.0"
+dependencies = [
+    "requests>=2.32.3,<3.0.0",
+    "boto3>=1.37.13,<2.0.0",
+    "feedparser>=6.0.11,<7.0.0",
+    "slack-sdk>=3.27.0,<4.0.0"
+]
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+personalized-aws-features = "personalized_aws_features.cli:main"
+
+[tool.poetry.group.dev.dependencies]
+flake8 = "^7.1.2"
+black = "^25.1.0"
+pytest = "^8.3.5"
